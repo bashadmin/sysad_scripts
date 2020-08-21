@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import boto3
+
+s3 = boto3.client('s3')
+def s3_download():
+	bucket = input('Which bucket do you wish to use? ')
+	oldname = input('What is the name of the file to download? ')
+	newname = input('What do you want to call the file? ')
+	s3.download_file(bucket,oldname,newname)
+s3_download()
